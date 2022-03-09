@@ -1,5 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. http://www.webflow.com  -->
-<!--  Last Published: Wed Mar 02 2022 02:00:52 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html>
 <html data-wf-page="620e8fdc46158ab785b5c309" data-wf-site="620e8fdb46158a2278b5c300">
 <head>
   <meta charset="utf-8">
@@ -23,9 +22,9 @@
         <h1 class="logo">The Golden Gloves</h1>
       </a><img src="images/gold.png" loading="lazy" width="65" alt="">
       <nav role="navigation" class="nav-menu w-nav-menu">
-        <a href="index.html" class="nav-link w-nav-link">Home</a>
-        <a href="contact.html" class="nav-link w-nav-link">Our Data</a>
-        <a href="project-page.html" aria-current="page" class="nav-link w-nav-link w--current">Machine Learning</a>
+        <a href="Home.html" class="nav-link w-nav-link">Home</a>
+        <a href="OurData.html" class="nav-link w-nav-link">Our Data</a>
+        <a href="MachineLearning.html" aria-current="page" class="nav-link w-nav-link w--current">Machine Learning</a>
       </nav>
       <div class="menu-button w-nav-button">
         <div class="hamburger-icon w-icon-nav-menu"></div>
@@ -45,11 +44,27 @@
       </div>
     </div>
   </div>
+  <div class="section grey wf-section">
+    <div class="w-container">
+      <div class="mobile-padding-wrapper">
+        <h2>Lessons Learned</h2>
+        <p>- Originally we tried using Logistic Regression, however this ended up being extremely inaccurate - with an accuracy score of 12% once it was properly working. Very low accuracy and recall values.<br><br>- After this we attempted to use a deep neural network. This model was immediately more accurate, however upon further investigation we found this was only due to it predicting that nobody was inducted to the HOF. It could not predict the rare circumstance. High accuracy and bad recall.<br><br>- Next was our first iteration of Random Forest Classification, the model was fairly accurate from the start, but didn&#x27;t make sense when dug into further. The reason behind this was we were feeding in too many columns of data, as we had combined our batting, fielding, and pitching tables all into one. This doesn&#x27;t work, as players can be inducted solely on one of these tables, and be average on the others.<br><br>- Finally we separated our datasets again and ran the Random Forest Model on all of them independently. This resulted in both the confusion matrixes and feature importance of the predictions looking significantly better. This finally resulted in precision, recall, and accuracy being greater then 90.</p>
+      </div>
+    </div>
+  </div>
+  <div class="section grey wf-section">
+    <div class="w-container">
+      <div class="mobile-padding-wrapper">
+        <h2>What We Found</h2>
+        <p>- We discovered that the batting statistics were the most important statistic for prediction for induction to the HOF. The batting database also produced the most accurate random forest model, with a rate of almost 95%. <br><br>-Upon analyzing the pitching statistics, we found that stikeouts carry the most weight within the category and the random forest model we ran weilded a high accuracy of almost 92%. <br><br><strong>- </strong>Last, but not least, we found that the fielding data was the least important statistic when determining whether a player would be inducted, when compared to batting and pitching. These stats seemed to be most relevant only if a player had 2000 games and 20 years in the league. Nevertheless, our random forest model resulted in an accuracy of almost 93%. </p>
+      </div>
+    </div>
+  </div>
   <div id="projects" class="section projects wf-section">
     <div class="w-container">
       <div class="mobile-padding-wrapper">
         <h2>Our Code</h2>
-        <div class="caption-wrapper"></div>
+        <div class="caption-wrapper"><img src="images/ml.png" loading="lazy" sizes="100vw" srcset="images/ml.png 500w, images/ml.png 1216w" alt=""></div>
       </div>
     </div>
   </div>
