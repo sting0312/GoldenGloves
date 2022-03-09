@@ -11,7 +11,7 @@ https://www.seanlahman.com/baseball-archive/statistics/
 After reviewing the data, we developed our hypothesis that the Lahman statistical archive contains enough data to be able to predict which players will be inducted into the Hall of Fame (HOF). We will test our hypothesis by using aggregated stats for each player in regard to batting, fielding, and pitching. Using this data we can attempt to predict hall of fame status using a classificication machine learning method.
 
 ## Approach:
-With our data found and hypothesis formed, we dived into the project by first creating our databases.  We used Python to create databases by merging data sources, trimming unnecessary and noisy data, and forming smaller, focused databases to in order to maximize our machine learning results. For visualizaion, we used Tableau.  Finally, to display our project, we created webpages through JavaScript.
+With our data found and hypothesis formed, we dived into the project by first creating our databases.  We used Python to create databases by merging data sources, trimming unnecessary and noisy data, and forming smaller, focused databases to in order to maximize our Machine Learning results. We continued to use Python for Machine Learning to determine from current Hall of Famers if there are any trends in the Lahmen statistics and use either deep learning or random forrest classification to help answer the hypothesis and apply that to future Hall of Fame candidates. For visualizaion, we used Tableau.  Finally, to display our project, we created webpages through JavaScript.
 
 ## Machine Learning:
 ### Why Random Forest?
@@ -26,18 +26,26 @@ Before learning with the data, we dropped columns that contained inconsitent dat
    - Next was our first iteration of Random Forest Classification, the model was fairly accurate from the start, but didn't make sense when dug into further. The reason behind this was we were feeding in too many columns of data, as we had combined our batting, fielding, and pitching tables all into one. This doesn't work, as players can be inducted soley on one of these tables, and be average on the others.
   - Finally we seperated our datasets again and ran the Random Forest Model on all of them independantly. This resulted in both the confusion matrixes and feature importances of the predictions looking significantly better. This finally resulsted in precision, recall, and accuracy being greater then 90.
   
+
 ## Statistics and Summary
    - We discovered that the batting statistics were the most important statistic for prediction for induction to the HOF. The batting database also produced the most accurate random forest model, with a rate of almost 95%. 
-*****pic****
+
+
+![batting.png](Visuals/batting.png)
+
 
    - Upon analyzing the pitching statistics, we found that stike-outs carry the most weight within the category and the random forest model we ran weilded a high accuracy of almost 92%.
-****pic****
+
+
+![pitching.png](Visuals/pitching.png)
+
 
    - Last, but not least, we found that the fielding data was the least important statistic when determining whether a player would be inducted, when compared to batting and pitching. These stats seemed to be most relevant only if a player had 2000 games and 20 years in the league. Nevertheless, our random forest model resulted in an accuracy of almost 93%.
-***pic***
 
-Overall, based on our random forest models, we feel we did prove our hypothesis and baseball players' chances of being inducted into the Hall of Fame can potentially be predicted based off of their batting, pitching, and or fielding statistics.
-=======
-- SQL: Uploading coresponding data sources into SQL and then join all relevetn data into one data frame.
-- Machine Learning: Use Python for Machine Learning to determine from current Hall of Famers if there are any trends in the Lahmen statistics and use either deep learning or random forrest classification to help answer the hypothesis and apply that to future Hall of Fame candidates. 
-- JavaScript: Use Java Script to create a dashboard to display our findings. 
+
+![fielding.png](Visuals/fielding.png)
+
+
+
+   Overall, based on our random forest models, we feel we did prove our hypothesis and baseball players' chances of being inducted into the Hall of Fame can potentially be predicted based off of their batting, pitching, and or fielding statistics.
+
